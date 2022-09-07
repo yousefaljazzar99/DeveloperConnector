@@ -136,6 +136,7 @@ class DeveloperDioHelper {
     if (response.statusCode != 200) {
       return false;
     } else {
+      user = ProfileResponce.fromJson(response.data);
       // post = post_response.fromJson(response.data);
       return true;
     }
