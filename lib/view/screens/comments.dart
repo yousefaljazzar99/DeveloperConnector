@@ -32,16 +32,16 @@ class Commentsdetails extends StatelessWidget {
               // border: Border.all(
               //     color: Colors.green, width: 2.0, style: BorderStyle.solid),
               color: color,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-                bottomLeft: Radius.circular(30),
-                bottomRight: Radius.circular(30),
-              ),
+              // borderRadius: BorderRadius.only(
+              //   topLeft: Radius.circular(30),
+              //   topRight: Radius.circular(30),
+              //   bottomLeft: Radius.circular(30),
+              //   bottomRight: Radius.circular(30),
+              // ),
             ),
             // color: Colors.grey.withOpacity(0.2),
             padding: EdgeInsets.all(20),
-            margin: EdgeInsets.only(top: 20, right: 20, left: 20),
+            // margin: EdgeInsets.only(top: 20, right: 20, left: 20),
             child: Column(
               children: [
                 Text(

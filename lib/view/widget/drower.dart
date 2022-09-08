@@ -9,7 +9,10 @@ import 'package:developer_app/view/screens/Profiles.dart';
 import 'package:developer_app/view/screens/posts.dart';
 import 'package:developer_app/view/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../provider/developer_provider.dart';
 
 class Drower extends StatefulWidget {
   @override
@@ -74,10 +77,11 @@ class _DrowerState extends State<Drower> {
             leading: Icon(Icons.post_add),
             iconColor: color,
             onTap: () async {
-              // SharedPreferences pref = await SharedPreferences.getInstance();
-              // dynamic token = pref.get("token");
-
-              // AppRouter.NavigateWithReplacemtnToWidget(Posts(token: token));
+              SharedPreferences pref = await SharedPreferences.getInstance();
+              dynamic token = pref.get("token");
+              await Provider.of<DeveloperProvider>(context, listen: false)
+                  .getAllPosts();
+              AppRouter.NavigateWithReplacemtnToWidget(Posts(token: token));
             },
           ),
 

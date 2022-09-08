@@ -18,7 +18,7 @@ class DeveloperDioHelper {
   static DeveloperDioHelper developerDioHelper = DeveloperDioHelper._();
   Dio dio = Dio();
   ProfileResponce? user;
-  //post_response? post;
+  postResponse? post;
 
   Future<List<ProfileResponce>> getAllProfile() async {
     var response = await dio
@@ -142,21 +142,39 @@ class DeveloperDioHelper {
     }
   }
 
-  // Future<List<post_response>> getAllPosts() async {
-  //   SharedPreferences pref = await SharedPreferences.getInstance();
-  //   dynamic token = pref.get("token");
-  //   var response = await dio.get(
-  //     'https://developer-connector-sami.herokuapp.com/api/posts',
-  //     options: Options(headers: {
-  //       'Authorization': token,
-  //     }),
-  //   );
-  //   log(response.data.toString());
-  //   if (response.statusCode != 200) {
-  //     return null!;
-  //   } else {
-  //     post = post_response.fromJson(response.data);
-  //     return response.data;
-  //   }
-  // }
+  Future<List<postResponse>> getAllPosts() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    dynamic token = pref.get("token");
+    var response = await dio.get(
+      'https://developer-connector-sami.herokuapp.com/api/posts',
+      options: Options(headers: {
+        'Authorization': token,
+      }),
+    );
+    log(response.data.toString());
+    if (response.statusCode != 200) {
+      return null!;
+    } else {
+      List<dynamic> _data = response.data;
+      List<postResponse> _postResponse =
+          _data.map((e) => postResponse.fromJson(e)).toList();
+      // post = postResponse.fromJson(response.data);
+      return _postResponse;
+    }
+  }
+
+  createPost(String text) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    dynamic token = pref.get("token");
+    var response = await dio
+        .post('https://developer-connector-sami.herokuapp.com/api/posts',
+            options: Options(headers: {
+              'Authorization': token,
+            }),
+            data: {"text": text});
+    if (response.statusCode != 201)
+      throw Exception('http.get error: statusCode= ${response.statusCode}');
+    print(response.data);
+    log(response.data.toString());
+  }
 }

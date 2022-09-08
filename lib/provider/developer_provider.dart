@@ -53,7 +53,7 @@ class DeveloperProvider extends ChangeNotifier {
 
   List<ProfileResponce> profile = [];
   List<ProfileResponce> users = [];
-  // List<PostsResponse> posts = [];
+  List<postResponse> posts = [];
 
   getAllProfile() async {
     profile = await DeveloperDioHelper.developerDioHelper.getAllProfile();
@@ -96,14 +96,14 @@ class DeveloperProvider extends ChangeNotifier {
     }
   }
 
-  // getAllPosts() async {
-  //   posts = await DeveloperhttpHelper.developerhttpHelper.getAllPosts();
-  //   notifyListeners();
-  // }
+  getAllPosts() async {
+    posts = await DeveloperDioHelper.developerDioHelper.getAllPosts();
+    notifyListeners();
+  }
 
-  // addNewPost(String addpost) async {
-  //   posts = await DeveloperhttpHelper.developerhttpHelper.createPost(addpost);
+  createPost(String text) async {
+    DeveloperDioHelper.developerDioHelper.createPost(text);
 
-  //   notifyListeners();
-  // }
+    notifyListeners();
+  }
 }

@@ -6,12 +6,18 @@ import 'package:developer_app/view/screens/posts.dart';
 import 'package:developer_app/view/screens/profile_details.dart';
 import 'package:flutter/material.dart';
 
-class post_widget extends StatelessWidget {
-  // post_response posts;
+class post_widget extends StatefulWidget {
+  postResponse posts;
 
   post_widget(
-//   this.posts,
-      );
+    this.posts,
+  );
+
+  @override
+  State<post_widget> createState() => _post_widgetState();
+}
+
+class _post_widgetState extends State<post_widget> {
   final Color color = Color.fromARGB(255, 85, 0, 255);
 
   @override
@@ -39,11 +45,11 @@ class post_widget extends StatelessWidget {
               child: SizedBox(
                 height: 80,
                 width: 80,
-                child: Image.network(''
-                    //   "assets/images/avatar.png",
-                    // 'https:' + (posts.user!.avatar ?? ''),
-                    // fit: BoxFit.cover,
-                    ),
+                child: Image.asset(
+                  "assets/images/avatar.png",
+                  // 'https:' + (posts.user!.avatar ?? ''),
+                  // fit: BoxFit.cover,
+                ),
               ),
             ),
             SizedBox(
@@ -55,8 +61,7 @@ class post_widget extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        '',
-                        // posts.user!.name ?? '',
+                        widget.posts.name ?? '',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
@@ -65,16 +70,16 @@ class post_widget extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
-                          //posts.text ?? '',
-                          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis eveniet cum cupiditate aliquam?',
+                      Text(widget.posts.text ?? '',
+                          //  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis eveniet cum cupiditate aliquam?',
                           //  profile.status ?? '',
                           style: TextStyle(color: Colors.white)),
                       SizedBox(
                         height: 10,
                       ),
-                      Text('Posted on   2021/12/01',
-                          //   posts.date ?? '',
+                      Text(
+                          //'Posted on   2021/12/01',
+                          widget.posts.date ?? '',
                           style: TextStyle(
                               color: Color.fromARGB(255, 220, 220, 220))),
                       Row(
@@ -96,7 +101,7 @@ class post_widget extends StatelessWidget {
                                 style: TextStyle(color: color),
                               )),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -106,5 +111,6 @@ class post_widget extends StatelessWidget {
         ),
       ),
     );
+    setState(() {});
   }
 }

@@ -15,19 +15,19 @@ class DeveloperhttpHelper {
   //   log(response.body.toString());
   // }
 
-  getAllPosts() async {
-    var headers = {
-      'Authorization':
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFhNzdiOTcyZDQwMWVkOGRmMDI2MzdkIn0sImlhdCI6MTY2MjE5NDUwNiwiZXhwIjoxNjYyNTU0NTA2fQ.g2JikgKnOhNXORamUZkmlbH2nMvnvB2wgqykuk24WcE'
-    };
-    var url =
-        Uri.parse('https://developer-connector-sami.herokuapp.com/api/posts');
-    Response response = await get(url, headers: headers);
-    if (response.statusCode != 200)
-      throw Exception('http.get error: statusCode= ${response.statusCode}');
-    print(response.body);
-    log(response.body.toString());
-  }
+  // getAllPosts() async {
+  //   var headers = {
+  //     'Authorization':
+  //         'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFhNzdiOTcyZDQwMWVkOGRmMDI2MzdkIn0sImlhdCI6MTY2MjE5NDUwNiwiZXhwIjoxNjYyNTU0NTA2fQ.g2JikgKnOhNXORamUZkmlbH2nMvnvB2wgqykuk24WcE'
+  //   };
+  //   var url =
+  //       Uri.parse('https://developer-connector-sami.herokuapp.com/api/posts');
+  //   Response response = await get(url, headers: headers);
+  //   if (response.statusCode != 200)
+  //     throw Exception('http.get error: statusCode= ${response.statusCode}');
+  //   print(response.body);
+  //   log(response.body.toString());
+  // }
 
   createPost(String addpost) async {
     var headers = {

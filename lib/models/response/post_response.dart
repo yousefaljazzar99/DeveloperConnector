@@ -1,4 +1,4 @@
-class post_response {
+class postResponse {
   String? sId;
   String? user;
   String? text;
@@ -8,7 +8,7 @@ class post_response {
 
   int? iV;
 
-  post_response(
+  postResponse(
       {this.sId,
       this.user,
       this.text,
@@ -17,7 +17,7 @@ class post_response {
       this.date,
       this.iV});
 
-  post_response.fromJson(Map<String, dynamic> json) {
+  postResponse.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
     user = json['user'];
     text = json['text'];
