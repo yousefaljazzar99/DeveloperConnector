@@ -49,7 +49,7 @@ And add comments from users registered in the application
 - [✅] [flutter_launcher_icons]
 
 --------------------------------
-## [🖥] Techniques used
+## 🖥 Techniques used
 - [✅] REST API
 - [✅] POSTMAN
 -------------------------------
@@ -60,7 +60,7 @@ And add comments from users registered in the application
 
 
 
-## [🖥]  Snapshots
+## 🖥  Snapshots
 
 ![9](https://user-images.githubusercontent.com/49205538/194057384-413d935f-3da2-4259-8e7c-c892d436c1f3.png)
 
