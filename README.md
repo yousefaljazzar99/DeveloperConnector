@@ -52,6 +52,7 @@ And add comments from users registered in the application
 ## 🖥 Techniques used
 - [✅] REST API
 - [✅] POSTMAN
+- [✅] MULTI LANGUAGE APP
 -------------------------------
 
 ## ⚒️ Design Patterns
