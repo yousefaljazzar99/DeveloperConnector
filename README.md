@@ -64,4 +64,6 @@ And add comments from users registered in the application
 
 ![9](https://user-images.githubusercontent.com/49205538/194057384-413d935f-3da2-4259-8e7c-c892d436c1f3.png)
 
-![10](https://user-images.githubusercontent.com/49205538/194057405-ac070d04-655e-43c9-93f9-2655cecc276f.png)
+![10](https://user-images.githubusercontent.com/49205538/194100301-1e15d61e-c114-492a-bd94-5dbb56039cee.png)
+
+
